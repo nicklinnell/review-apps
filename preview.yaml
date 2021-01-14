@@ -14,8 +14,8 @@ spec:
     helm:
       values: |
         image:
-          repository: "nicklinnell/hellokyan:{{.APP_ID}}"
-          tag: master
+          repository: nicklinnell/hellokyan
+          tag: "{{.APP_ID}}"
       version: v3
   destination:
     namespace: "{{.APP_ID}}"
