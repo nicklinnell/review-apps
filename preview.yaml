@@ -9,12 +9,12 @@ spec:
   project: previews
   source:
     path: helm
-    repoURL: git@github.com:nicklinnell/argocd-preview.git
+    repoURL: https://github.com/nicklinnell/review-apps.git
     targetRevision: HEAD
     helm:
       values: |
         image:
-          repository: nicklinnell/argocd-preview
+          repository: "nicklinnell/hellokyan:{{.APP_ID}}"
           tag: master
       version: v3
   destination:
