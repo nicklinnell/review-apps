@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: pr-2
+  namespace: argocd
+spec:
+  destination:
+    namespace: pr-2
+    server: https://kubernetes.default.svc
+  project: previews
+  source:
+    helm:
+      values: |
+        image:
+          repository: nicklinnell/hellokyan
+          tag: "pr-2"
+      version: v3
+    path: helm
+    repoURL: https://github.com/nicklinnell/review-apps.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
