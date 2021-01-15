@@ -4,7 +4,7 @@ metadata:
   name: previews
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: previews
   source:
@@ -14,3 +14,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: previews
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true

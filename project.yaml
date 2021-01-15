@@ -4,7 +4,7 @@ metadata:
   name: previews
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   description: Previews
   sourceRepos:

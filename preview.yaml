@@ -4,7 +4,7 @@ metadata:
   name: "{{.APP_ID}}"
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io
 spec:
   project: previews
   source:
@@ -15,7 +15,9 @@ spec:
       values: |
         image:
           repository: nicklinnell/hellokyan
-          tag: "{{.APP_ID}}"
+          tag: "{{.TAG_ID}}"
+        ingress:
+          host: {{.APP_ID}}.example.com
       version: v3
   destination:
     namespace: "{{.APP_ID}}"
