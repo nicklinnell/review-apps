@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/nicklinnell/review-apps.git
     targetRevision: HEAD
-    path: templates
+    path: helm
   destination:
     server: https://kubernetes.default.svc
     namespace: previews
