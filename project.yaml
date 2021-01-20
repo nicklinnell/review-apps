@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: previews
+  name: review-apps
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,7 @@ spec:
   sourceRepos:
   - '*'
   destinations:
-  - namespace: previews
+  - namespace: review-apps
     server: https://kubernetes.default.svc
   - namespace: "pr-*"
     server: https://kubernetes.default.svc

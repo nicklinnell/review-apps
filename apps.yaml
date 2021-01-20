@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: previews
+  name: review-apps
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: previews
+  project: review-apps
   source:
     repoURL: https://github.com/nicklinnell/review-apps.git
     targetRevision: HEAD
     path: helm
   destination:
     server: https://kubernetes.default.svc
-    namespace: previews
+    namespace: review-apps
   syncPolicy:
     automated:
       selfHeal: true
