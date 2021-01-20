@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: pr-hellokyan-5
     server: https://kubernetes.default.svc
-  project: previews
+  project: review-apps
   source:
     helm:
       values: |
