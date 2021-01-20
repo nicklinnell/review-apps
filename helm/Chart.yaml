@@ -1,4 +1,4 @@
 apiVersion: v1
-description: Previews environment
-name: previews
+description: Review app environment
+name: review-apps
 version: "0.1.0"
