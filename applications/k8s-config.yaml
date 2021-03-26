@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: review-apps
+  name: k8s-config
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://kubernetes.default.svc
     namespace: argocd
-  project: review-apps
+    server: https://kubernetes.default.svc
+  project: default
   source:
-    path: applications
+    path: k8s-config
     repoURL: https://github.com/nicklinnell/review-apps.git
     targetRevision: HEAD
   syncPolicy:
